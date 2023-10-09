@@ -1,12 +1,14 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright Druid Mechanics
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "AbilitySystemComponent.h"
-#include "AttributeSet.h"
 #include "UObject/NoExportTypes.h"
 #include "AuraWidgetController.generated.h"
+
+class UAttributeSet;
+class UAbilitySystemComponent;
 
 USTRUCT(BlueprintType)
 struct FWidgetControllerParams
@@ -15,7 +17,7 @@ struct FWidgetControllerParams
 
 	FWidgetControllerParams() {}
 	FWidgetControllerParams(APlayerController* PC, APlayerState* PS, UAbilitySystemComponent* ASC, UAttributeSet* AS)
-	: PlayerController(PC), PlayerState(PS), AbilitySystemComponent(ASC), AttributeSet(AS)  {}
+	: PlayerController(PC), PlayerState(PS), AbilitySystemComponent(ASC), AttributeSet(AS) {}
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TObjectPtr<APlayerController> PlayerController = nullptr;
@@ -37,12 +39,13 @@ UCLASS()
 class AURA_API UAuraWidgetController : public UObject
 {
 	GENERATED_BODY()
-
 public:
 	UFUNCTION(BlueprintCallable)
 	void SetWidgetControllerParams(const FWidgetControllerParams& WCParams);
 	virtual void BroadcastInitialValues();
+	virtual void BindCallbacksToDependencies();
 protected:
+
 	UPROPERTY(BlueprintReadOnly, Category="WidgetController")
 	TObjectPtr<APlayerController> PlayerController;
 
