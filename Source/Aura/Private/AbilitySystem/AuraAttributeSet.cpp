@@ -4,7 +4,6 @@
 #include "AbilitySystem/AuraAttributeSet.h"
 
 #include "AbilitySystemBlueprintLibrary.h"
-#include "AIController.h"
 #include "GameFramework/Character.h"
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
