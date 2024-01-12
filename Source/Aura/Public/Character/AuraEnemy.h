@@ -27,6 +27,7 @@ public:
 
 	/** Combat Interface **/
 	virtual int32 GetPlayerLevel() override;
+	virtual void Die() override;
 	/** end Combat Interface **/
 
 	UPROPERTY(BlueprintAssignable)
@@ -34,6 +35,9 @@ public:
 
 	UPROPERTY(BlueprintAssignable)
 	FOnAttributeChangedSignature OnMaxHealthChanged;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
+	float LifeSpan = 5.f;
 
 protected:
 	virtual void BeginPlay() override;
