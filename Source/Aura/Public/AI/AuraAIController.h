@@ -6,7 +6,6 @@
 #include "AIController.h"
 #include "AuraAIController.generated.h"
 
-class UBlackboardComponent;
 class UBehaviorTreeComponent;
 
 /**
