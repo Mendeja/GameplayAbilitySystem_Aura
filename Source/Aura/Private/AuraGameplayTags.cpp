@@ -11,6 +11,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	/*
 	 * Primary Attributes
 	 */
+	
 	GameplayTags.Attributes_Primary_Strength = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Primary.Strength"),
 		FString("Increases physical damage")
@@ -34,6 +35,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	/*
 	 * Secondary Attributes
 	 */
+	
 	GameplayTags.Attributes_Secondary_Armor = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Secondary.Armor"),
 		FString("Reduces damage taken, improves Block Chance")
@@ -85,8 +87,19 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	/*
+	 * Meta Attributes
+	 */
+
+	GameplayTags.Attributes_Meta_IncomingXP = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Attributes.Meta.IncomingXP"),
+		FString("Incoming XP Meta Attribute")
+		);
+
+	
+	/*
 	 * Input Tags
 	 */
+	
 	GameplayTags.InputTag_LMB = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("InputTag.LMB"),
 		FString("Input Tag for Left Mouse Button")
@@ -118,7 +131,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Damage"),
-	FString("Damage")
-	);
-}
+		FName("Damage"),
+		FString("Damage")
+		);
+	}

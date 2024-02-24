@@ -134,7 +134,6 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
 		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
-		UE_LOG(LogTemp, Warning, TEXT("Changed Health on %s, Health: %f"), *Props.TargetCharacter->GetName(), GetHealth());
 	}
 	if (Data.EvaluatedData.Attribute == GetManaAttribute())
 	{
@@ -144,6 +143,7 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	{
 		const float LocalIncomingDamage = GetIncomingDamage();
 		SetIncomingDamage(0.f);
+		
 		if (LocalIncomingDamage > 0.f)
 		{
 			const float NewHealth = GetHealth() - LocalIncomingDamage;
@@ -164,6 +164,12 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 			}
 			ShowFloatingText(Props, LocalIncomingDamage);
 		}
+	}
+	if (Data.EvaluatedData.Attribute == GetIncomingXPAttribute())
+	{
+		const float LocalIncomingXP = GetIncomingXP();
+		SetIncomingXP(0.f);
+		UE_LOG(LogTemp, Log, TEXT("Inconmig XP: %f"), GetIncomingXP());
 	}
 }
 
