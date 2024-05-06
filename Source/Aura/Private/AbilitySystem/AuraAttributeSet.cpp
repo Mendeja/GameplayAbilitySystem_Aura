@@ -221,7 +221,7 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 
 void UAuraAttributeSet::PostAttributeChange(const FGameplayAttribute& Attribute, float OldValue, float NewValue)
 {
-	Super::PostAttributeChange(Attribute, OldValue, NewValue);
+	Super::PostAttributeChange(Attribute, OldValue, NewValue);	
 
 	if (Attribute == GetMaxHealthAttribute() && bTopOffHealth)
 	{
