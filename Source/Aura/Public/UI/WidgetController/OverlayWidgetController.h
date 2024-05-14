@@ -82,8 +82,7 @@ protected:
 
 	void OnXPChanged(int32 NewXP);
 
-	void OnInitializeStartupAbilities(UAuraAbilitySystemComponent* AuraAbilitySystemComponent);
-
+	void OnInitializeStartupAbilities(UAuraAbilitySystemComponent* InAuraAbilitySystemComponent);
 };
 
 template <typename T>

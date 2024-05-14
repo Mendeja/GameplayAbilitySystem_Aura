@@ -113,17 +113,16 @@ void UOverlayWidgetController::OnXPChanged(int32 NewXP)
 	
 }
 
-void UOverlayWidgetController::OnInitializeStartupAbilities(UAuraAbilitySystemComponent* AuraAbilitySystemComponent)
+void UOverlayWidgetController::OnInitializeStartupAbilities(UAuraAbilitySystemComponent* InAuraAbilitySystemComponent)
 {
-	if (!AuraAbilitySystemComponent->bStartupAbilitiesGiven) return;
+	if (!InAuraAbilitySystemComponent->bStartupAbilitiesGiven) return;
 
-	// TODO Get Information about all given abilities, look up they Ability Info and broadcast it to widgets.
 	FForEachAbility BroadcastDelegate;
-	BroadcastDelegate.BindLambda([this, AuraAbilitySystemComponent](const FGameplayAbilitySpec& AbilitySpec)
+	BroadcastDelegate.BindLambda([this, InAuraAbilitySystemComponent](const FGameplayAbilitySpec& AbilitySpec)
 	{
 		// TODO Need a way to figure out the ability tag for a given ability spec 
-		FAuraAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(AuraAbilitySystemComponent->GetAbilityTagFromSpec(AbilitySpec));
-		Info.InputTag = AuraAbilitySystemComponent->GetInputTagFromSpec(AbilitySpec);
+		FAuraAbilityInfo Info = AbilityInfo->FindAbilityInfoForTag(InAuraAbilitySystemComponent->GetAbilityTagFromSpec(AbilitySpec));
+		Info.InputTag = InAuraAbilitySystemComponent->GetInputTagFromSpec(AbilitySpec);
 		AbilityInfoDelegate.Broadcast(Info);
 	});
 	AuraAbilitySystemComponent->ForEachAbility(BroadcastDelegate);
