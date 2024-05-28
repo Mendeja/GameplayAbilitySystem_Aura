@@ -47,6 +47,7 @@ public:
 	FGameplayTag Damage;
 
 	FGameplayTag Abilities_Fire_FireBolt;
+	FGameplayTag Abilities_Lightning_Electrocute;
 	FGameplayTag Abilities_HitReact;
 
 	FGameplayTag Abilities_Status_Locked;
@@ -59,6 +60,8 @@ public:
 	FGameplayTag Abilities_Type_None;
 	
 	FGameplayTag Cooldown_Fire_FireBolt;
+	FGameplayTag Cooldown_Lightning_Electrocute;
+	
 
 private:
 	static FAuraGameplayTags GameplayTags;
