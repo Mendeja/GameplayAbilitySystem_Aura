@@ -148,6 +148,11 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	/*
 	 * Abilities
 	 */
+	
+	GameplayTags.Abilities_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Abilities.None"),
+		FString("No Ability - like the nullptr for Ability Tag")
+		);
 
 	GameplayTags.Abilities_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Fire.FireBolt"),
@@ -160,9 +165,9 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	GameplayTags.Abilities_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	FName("Abilities.HitReact"),
-	FString("Hit React Ability")
-	);
+		FName("Abilities.HitReact"),
+		FString("Hit React Ability")
+		);
 
 	GameplayTags.Abilities_Status_Eligible = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Status.Eligible"),
