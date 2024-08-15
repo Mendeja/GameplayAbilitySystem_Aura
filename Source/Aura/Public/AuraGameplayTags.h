@@ -45,6 +45,9 @@ public:
 	FGameplayTag InputTag_Passive_2;
 
 	FGameplayTag Damage;
+	FGameplayTag Damage_Fire;
+
+	TArray<FGameplayTag> DamageTypes;
 
 	FGameplayTag Abilities_None;
 
