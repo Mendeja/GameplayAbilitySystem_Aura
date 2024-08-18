@@ -59,6 +59,7 @@ public:
 
 	FGameplayTag Abilities_None;
 
+	FGameplayTag Abilities_Attack;
 	FGameplayTag Abilities_Fire_FireBolt;
 	FGameplayTag Abilities_Lightning_Electrocute;
 	FGameplayTag Abilities_HitReact;

@@ -7,6 +7,7 @@
 #include "Engine/DataAsset.h"
 #include "CharacterClassInfo.generated.h"
 
+class UGameplayAbility;
 class UGameplayEffect;
 
 UENUM(BlueprintType)
@@ -24,6 +25,9 @@ struct FCharacterClassDefaultInfo
 
 	UPROPERTY(EditDefaultsOnly, Category = "Class Defaults")
 	TSubclassOf<UGameplayEffect> PrimaryAttributes;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Class Defaults")
+	TArray<TSubclassOf<UGameplayAbility>> CommonAbilities;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Class Defaults")
 	FScalableFloat XPReward = FScalableFloat();
@@ -48,6 +52,9 @@ public:
 	UPROPERTY(EditDefaultsOnly, Category = "Common Class Defaults")
 	TSubclassOf<UGameplayEffect> VitalAttributes;
 
+	UPROPERTY(EditDefaultsOnly, Category = "Common Class Defaults")
+	TArray<TSubclassOf<UGameplayAbility>> CommonAbilities;
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Common Class Defaults|Damage")
 	TObjectPtr<UCurveTable> DamageCalculationCoefficients;
 

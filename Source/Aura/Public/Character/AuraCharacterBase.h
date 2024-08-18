@@ -30,6 +30,8 @@ public:
 	virtual void MulticastHandleDeath();
 
 	virtual ECharacterClass GetCharacterClass_Implementation() override;
+
+	virtual UAnimMontage* GetHitReactMontage_Implementation() override;
 	
 protected:
 	virtual void BeginPlay() override;
@@ -89,4 +91,7 @@ private:
 
 	UPROPERTY(EditAnywhere, Category = "Abilities")
 	TArray<TSubclassOf<UGameplayAbility>> StartupPassiveAbilities;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<UAnimMontage> HitReactMontage;
 };

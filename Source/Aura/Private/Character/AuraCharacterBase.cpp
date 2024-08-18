@@ -48,16 +48,22 @@ void AAuraCharacterBase::MulticastHandleDeath_Implementation()
 	Dissolve();
 }
 
-ECharacterClass AAuraCharacterBase::GetCharacterClass_Implementation()
-{
-	return CharacterClass;
-}
-
 void AAuraCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
 }
+
+ECharacterClass AAuraCharacterBase::GetCharacterClass_Implementation()
+{
+	return CharacterClass;
+}
+
+UAnimMontage* AAuraCharacterBase::GetHitReactMontage_Implementation()
+{
+	return HitReactMontage;
+}
+
 
 FVector AAuraCharacterBase::GetCombatSocketLocation()
 {
